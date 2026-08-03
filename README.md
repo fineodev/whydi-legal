@@ -1,1 +1,1 @@
-# whydi-legal-2
+# whydi-legal
