@@ -83,12 +83,14 @@
 <body>
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <div class="updated">Whydi &middot; Last updated: September 3, 2026</div>
+  <div class="updated">Whydi &middot; Last updated: September 28, 2026</div>
 
   <div class="callout">
-    <strong>Short version:</strong> Whydi has no accounts, no analytics, no ad SDKs, and no servers.
-    It never sends your data anywhere, because there is nowhere to send it. Everything you create &mdash;
-    tasks, notes, excuses, annual events &mdash; stays in a local database on your device.
+    <strong>Short version:</strong> Whydi has no accounts, no analytics, no ad SDKs, and no servers of
+    its own. It never sends your data to us, because there is nowhere to send it. Everything you create
+    &mdash; tasks, notes, excuses, annual events &mdash; lives in a local database on your device. If you
+    have Android's backup switched on, Android also keeps a copy of that database in <em>your own</em>
+    Google account so it can be restored on a new phone (see <a href="#backups">Backups</a>).
   </div>
 
   <h2>What data Whydi stores</h2>
@@ -98,12 +100,14 @@
     <li>Task completion history, including any excuse text you type when resolving a missed deadline</li>
     <li>Statistics derived from that history, such as completion rates, streaks, and which weekday you miss most often</li>
     <li>Annual events (birthdays, anniversaries, imported holidays) you add</li>
-    <li>App preferences (theme, week-start day, onboarding status)</li>
+    <li>App preferences (theme, language, week-start day, onboarding status)</li>
+    <li>A running count of tasks you've completed, and whether the one-time rating prompt has already been shown</li>
   </ul>
   <p>
     None of this is transmitted to us, to the app developer, or to any third party. There is no
-    account, login, or cloud sync &mdash; the data lives only on your device, and in any backup you
-    personally create using the app's own calendar export feature.
+    account, login, or cloud sync of Whydi's own. The data lives on your device, in Android's backup
+    of it in your own Google account if you have that switched on, and in any calendar file you
+    choose to export yourself.
   </p>
 
   <h2>What Whydi does not do</h2>
@@ -113,7 +117,7 @@
     <li>No advertising, ad networks, or ad identifiers</li>
     <li>No selling, sharing, or transmitting your data to third parties</li>
     <li>No payments, subscriptions, or in-app purchases &mdash; Whydi never asks for card or billing details, so it holds no payment information about you</li>
-    <li>No network requests at all &mdash; the app functions entirely offline</li>
+    <li>No network requests of its own &mdash; the app functions entirely offline. The only network activity connected to Whydi comes from two Android and Google Play system services described below (backup, and the rating prompt), which run under Google's control, not Whydi's.</li>
   </ul>
 
   <h2>What Whydi reads from your device</h2>
@@ -147,9 +151,33 @@
     <strong>About the network permissions.</strong> If you inspect Whydi's permission list you will
     also see <em>Internet</em> and <em>View network connections</em>, along with storage, wake-lock and
     badge permissions. These are declared automatically by the standard app-development frameworks
-    Whydi is built on, not requested by Whydi itself, and the app makes <strong>no network requests of
-    any kind</strong>. We would rather tell you they are there than have you find them and wonder.
+    Whydi is built on, not requested by Whydi itself, and Whydi's own code makes <strong>no network
+    requests of any kind</strong>. We would rather tell you they are there than have you find them and
+    wonder.
   </div>
+
+  <h2 id="backups">Backups</h2>
+  <p>
+    Whydi uses Android's built-in backup so your tasks survive a new phone or a reinstall. If backup
+    is switched on for your device (Settings &rarr; Google &rarr; Backup on most phones), Android
+    periodically copies Whydi's task database to your own Google account. Android does the same when
+    you move to a new phone with its phone-to-phone transfer.
+  </p>
+  <ul>
+    <li>Only the task database is included &mdash; the data listed under "What data Whydi stores" above. Nothing else from your device is added by Whydi.</li>
+    <li>The copy is created, uploaded, stored and encrypted by Android and Google, on their schedule, under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. Whydi does not send it anywhere itself, and we never receive it or have any way to access it.</li>
+    <li>Android restores it automatically when you install Whydi again while signed in to the same Google account. Whydi has no restore button of its own.</li>
+    <li>You control this entirely: turn Android backup off, or delete Whydi's backup from your Google account's backup settings, and no copy is kept.</li>
+  </ul>
+
+  <h2>Rating prompt</h2>
+  <p>
+    At most once per install &mdash; after you have completed a few tasks, or cleared everything due
+    in a day &mdash; Whydi may ask Google Play to show its standard "rate this app" dialog. Whydi works
+    this out on your device, from your own task history, and passes none of that history on.
+    Google Play decides whether the dialog actually appears. Any rating or review you leave goes to
+    Google Play under Google's own terms, and Whydi cannot see whether you rated it or what you wrote.
+  </p>
 
   <h2>Importing and exporting your data</h2>
   <p>
@@ -185,17 +213,18 @@
   <h2>Data security and deletion</h2>
   <p>
     Your data is stored locally in the app's private storage area, protected by your device's own
-    security, and Whydi disables Android's automatic app backup so that your task database is not
-    copied off the device by the system. Uninstalling Whydi, or clearing its app data from Android's
-    App Info screen, permanently deletes everything the app has stored. Because no copy is ever sent
-    anywhere, there is nothing for us to delete on your behalf and no deletion request to make.
+    security. Uninstalling Whydi, or clearing its app data from Android's App Info screen, deletes
+    everything the app has stored on the device. If Android backup is on, a copy may remain in your
+    Google account's backup (see <a href="#backups">Backups</a>). You can delete it there, and Google
+    also removes backups of apps you no longer use after a period it sets. Because no copy is ever
+    sent to us, there is nothing for us to delete on your behalf and no deletion request to make.
   </p>
 
   <h2>Children's privacy</h2>
   <p>
     Whydi is not directed at children and does not knowingly collect any information from anyone,
-    regardless of age &mdash; it does not collect information from anyone at all, since nothing leaves
-    the device.
+    regardless of age &mdash; it does not collect information from anyone at all, since nothing is ever
+    sent to us.
   </p>
 
   <h2>Changes to this policy</h2>
